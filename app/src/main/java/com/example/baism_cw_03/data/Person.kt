@@ -1,6 +1,5 @@
 package com.example.baism_cw_03.data
 
-import android.location.Address
 import androidx.room3.Entity
 import androidx.room3.PrimaryKey
 
