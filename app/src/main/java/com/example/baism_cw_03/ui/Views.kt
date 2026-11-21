@@ -110,41 +110,40 @@ fun PersonListScreen(people: List<Person>) {
             items(people, key = { it.id }) { person -> PersonCard(person) }
         }
     }
+}
+@Composable
+fun DeletePersonScreen(people: List<Person>, onDelete: (Person) -> Unit) {
+    var toDelete by remember { mutableStateOf<Person?>(null) }
 
-    @Composable
-    fun DeletePersonScreen(people: List<Person>, onDelete: (Person) -> Unit) {
-        var toDelete by remember { mutableStateOf<Person?>(null) }
-
-        if (people.isEmpty()) {
-            EmptyState()
-        } else {
-            LazyColumn(
-                modifier = Modifier.fillMaxSize(),
-                contentPadding = PaddingValues(16.dp),
-                verticalArrangement = Arrangement.spacedBy(7.dp),
-            ) {
-                items(people, key = { it.id }) { person ->
-                    PersonCard(person) {
-                        IconButton(onClick = { toDelete = person }) {
-                            Icon(Icons.Filled.Delete, contentDescription = "Usuń")
-                        }
+    if (people.isEmpty()) {
+        EmptyState()
+    } else {
+        LazyColumn(
+            modifier = Modifier.fillMaxSize(),
+            contentPadding = PaddingValues(16.dp),
+            verticalArrangement = Arrangement.spacedBy(7.dp),
+        ) {
+            items(people, key = { it.id }) { person ->
+                PersonCard(person) {
+                    IconButton(onClick = { toDelete = person }) {
+                        Icon(Icons.Filled.Delete, contentDescription = "Usuń")
                     }
                 }
             }
         }
+    }
 
-        toDelete?.let { person ->
-            AlertDialog(
-                onDismissRequest = { toDelete = null },
-                title = { Text("Usunąć osobę?") },
-                text = { Text("${person.firstName} ${person.lastName} zostanie trwale usunięta.") },
-                confirmButton = {
-                    TextButton(onClick = { toDelete = null }) { Text("Usuń") }
-                },
-                dismissButton = {
-                    TextButton(onClick = { toDelete = null }) { Text("Anuluj") }
-                },
-            )
-        }
+    toDelete?.let { person ->
+        AlertDialog(
+            onDismissRequest = { toDelete = null },
+            title = { Text("Usunąć osobę?") },
+            text = { Text("${person.firstName} ${person.lastName} zostanie trwale usunięta.") },
+            confirmButton = {
+                TextButton(onClick = { toDelete = null }) { Text("Usuń") }
+            },
+            dismissButton = {
+                TextButton(onClick = { toDelete = null }) { Text("Anuluj") }
+            },
+        )
     }
 }
