@@ -10,7 +10,6 @@ import kotlinx.coroutines.flow.Flow
 interface PersonDao {
     @Query("SELECT * FROM people ORDER BY lastName COLLATE NOCASE, firstName COLLATE NOCASE")
     fun observeAll(): Flow<List<Person>>
-
     @Insert
     suspend fun insert(person: Person): Long
 
