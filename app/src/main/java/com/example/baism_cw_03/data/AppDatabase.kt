@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.room3.Database
 import androidx.room3.Room
 import androidx.room3.RoomDatabase
+import androidx.sqlite.driver.bundled.BundledSQLiteDriver
 import kotlin.concurrent.Volatile
 
 @Database(entities = [Person::class], version = 1, exportSchema = false)
@@ -17,11 +18,13 @@ abstract class AppDatabase : RoomDatabase() {
 
         fun get(context: Context): AppDatabase =
             instance ?: synchronized(this) {
-                instance ?: Room.databaseBuilder(
+                instance ?: Room.databaseBuilder<AppDatabase>(
                     context.applicationContext,
-                    AppDatabase::class.java,
                     "persons.db",
-                ).build().also { instance = it}
+                )
+                    .setDriver(BundledSQLiteDriver())
+                    .build()
+                    .also { instance = it }
             }
     }
 }
