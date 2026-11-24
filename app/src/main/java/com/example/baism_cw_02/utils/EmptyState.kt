@@ -1,4 +1,4 @@
-package com.example.baism_cw_03.utils
+package com.example.baism_cw_02.utils
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column

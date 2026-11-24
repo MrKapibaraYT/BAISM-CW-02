@@ -22,5 +22,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BAiSM-CW-03"
+rootProject.name = "BAiSM-CW-02"
 include(":app")

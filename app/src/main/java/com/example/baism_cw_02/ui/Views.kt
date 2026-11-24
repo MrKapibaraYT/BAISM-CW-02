@@ -1,4 +1,4 @@
-package com.example.baism_cw_03.ui
+package com.example.baism_cw_02.ui
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
@@ -28,12 +28,12 @@ import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.baism_cw_03.data.Person
-import com.example.baism_cw_03.utils.EmptyState
-import com.example.baism_cw_03.utils.FormField
-import com.example.baism_cw_03.utils.PersonCard
-import com.example.baism_cw_03.validation.PersonErrors
-import com.example.baism_cw_03.validation.PersonForm
+import com.example.baism_cw_02.data.Person
+import com.example.baism_cw_02.utils.EmptyState
+import com.example.baism_cw_02.utils.FormField
+import com.example.baism_cw_02.utils.PersonCard
+import com.example.baism_cw_02.validation.PersonErrors
+import com.example.baism_cw_02.validation.PersonForm
 
 @Composable
 fun HomeScreen(onNavigate: (String) -> Unit) {

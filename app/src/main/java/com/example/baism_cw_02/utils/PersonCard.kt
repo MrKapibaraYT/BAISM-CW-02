@@ -1,4 +1,4 @@
-package com.example.baism_cw_03.utils
+package com.example.baism_cw_02.utils
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Row
@@ -11,7 +11,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
-import com.example.baism_cw_03.data.Person
+import com.example.baism_cw_02.data.Person
 
 @Composable
 fun PersonCard(person: Person, trailing: @Composable (() -> Unit)? = null) {
