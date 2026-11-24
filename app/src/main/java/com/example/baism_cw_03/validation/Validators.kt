@@ -33,13 +33,13 @@ data class PersonErrors(
 
 object Validators {
     val DATE_FORMAT: DateTimeFormatter =
-        DateTimeFormatter.ofPattern("dd.MM.yyyy").withResolverStyle(ResolverStyle.STRICT)
+        DateTimeFormatter.ofPattern("dd.MM.uuuu").withResolverStyle(ResolverStyle.STRICT)
 
     private val EMAIL_REGEX =
         Regex("^[A-Za-z0-9._%+-]+@[A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*\\.[A-Za-z]{2,}$")
 
     private val NAME_REGEX = Regex("^\\p{L}[\\p{L} '-]*$")
-    private val PHONE_CHARS_REGEX = Regex("^\\+?[0-9 -]$")
+    private val PHONE_CHARS_REGEX = Regex("^\\+?[0-9 -]+$")
 
     fun validateName(value: String, label: String): String? {
         val v = value.trim()
@@ -59,7 +59,7 @@ object Validators {
         val date = try {
             LocalDate.parse(v, DATE_FORMAT)
         } catch (e: DateTimeParseException) {
-            return "Zły format daty. Poprawny: dd.MM.yyyy"
+            return "Zły format daty. Poprawny: dd.mm.yyyy"
         }
         return when {
             date.isAfter(today) -> "Data urodzenia nie może być z przyszłości"
