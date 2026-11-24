@@ -9,15 +9,25 @@ activityCompose = "1.8.0"
 kotlin = "2.2.10"
 composeBom = "2026.02.01"
 room3Common = "3.0.3"
+room3Compiler = "3.0.3"
 room3Runtime = "3.0.3"
 material3 = "1.5.0"
 navigationRuntimeKtx = "2.10.2"
 navigationCompose = "2.10.2"
+roomCompiler = "2.8.5"
+roomKtx = "2.8.5"
+roomRuntime = "2.8.5"
+ksp = "2.2.10-2.3.13"
 ui = "1.13.0"
+sqliteBundled = "2.7.1"
 
 [libraries]
 androidx-compose-material-icons-extended = { module = "androidx.compose.material:material-icons-extended" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
+androidx-room-compiler = { module = "androidx.room:room-compiler", version.ref = "roomCompiler" }
+androidx-room-ktx = { module = "androidx.room:room-ktx", version.ref = "roomKtx" }
+androidx-room-runtime = { module = "androidx.room:room-runtime", version.ref = "roomRuntime" }
+androidx-room3-compiler = { module = "androidx.room3:room3-compiler", version.ref = "room3Compiler" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
 androidx-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espressoCore" }
@@ -37,6 +47,7 @@ androidx-material3 = { group = "androidx.compose.material3", name = "material3",
 androidx-navigation-runtime-ktx = { group = "androidx.navigation", name = "navigation-runtime-ktx", version.ref = "navigationRuntimeKtx" }
 androidx-navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigationCompose" }
 androidx-ui = { group = "androidx.compose.ui", name = "ui", version.ref = "ui" }
+androidx-sqlite-bundled = { group = "androidx.sqlite", name = "sqlite-bundled", version.ref = "sqliteBundled" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }
