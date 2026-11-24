@@ -77,9 +77,9 @@ fun AddPersonScreen(
     ) {
         FormField("Imię", firstName, { firstName = it }, errors.firstName)
         FormField("Nazwisko", lastName, { lastName = it }, errors.lastName)
-        FormField("Nr telefonu (np. +48 123 423 212", phone, {phone = it }, errors.phone)
+        FormField("Nr telefonu (np. +48 123 423 212)", phone, {phone = it }, errors.phone)
         FormField("Adres e-mail", email, { email = it }, errors.email)
-        FormField("Data urodzenia (DD.MM.YYYY)", birthDate, { birthDate = it }, errors.birthDate)
+        FormField("Data urodzenia (dd.mm.yyyy)", birthDate, { birthDate = it }, errors.birthDate)
         FormField("Adres", address, { address = it }, errors.address)
 
         Button(
@@ -139,7 +139,10 @@ fun DeletePersonScreen(people: List<Person>, onDelete: (Person) -> Unit) {
             title = { Text("Usunąć osobę?") },
             text = { Text("${person.firstName} ${person.lastName} zostanie trwale usunięta.") },
             confirmButton = {
-                TextButton(onClick = { toDelete = null }) { Text("Usuń") }
+                TextButton(onClick = {
+                    onDelete(person)
+                    toDelete = null
+                }) { Text("Usuń") }
             },
             dismissButton = {
                 TextButton(onClick = { toDelete = null }) { Text("Anuluj") }
