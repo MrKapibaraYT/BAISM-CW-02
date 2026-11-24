@@ -1,4 +1,4 @@
-package com.example.baism_cw_03.ui
+package com.example.baism_cw_02.ui
 
 import androidx.compose.foundation.layout.padding
 import androidx.compose.material.icons.Icons

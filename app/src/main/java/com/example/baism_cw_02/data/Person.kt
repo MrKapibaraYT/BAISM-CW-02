@@ -1,4 +1,4 @@
-package com.example.baism_cw_03.data
+package com.example.baism_cw_02.data
 
 import androidx.room3.Entity
 import androidx.room3.PrimaryKey

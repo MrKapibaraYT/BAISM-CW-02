@@ -1,4 +1,4 @@
-package com.example.baism_cw_03
+package com.example.baism_cw_02
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

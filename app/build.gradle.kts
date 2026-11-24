@@ -5,7 +5,7 @@ plugins {
 }
 
 android {
-    namespace = "com.example.baism_cw_03"
+    namespace = "com.example.baism_cw_02"
     compileSdk {
         version = release(37) {
             minorApiLevel = 1
