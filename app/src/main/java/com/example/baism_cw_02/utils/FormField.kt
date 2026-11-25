@@ -16,6 +16,7 @@ fun FormField(
     onChange: (String) -> Unit,
     error: String?,
     keyboardType: KeyboardType = KeyboardType.Text,
+    modifier: Modifier = Modifier,
 ) {
     OutlinedTextField(
         value = value,
@@ -25,6 +26,6 @@ fun FormField(
         supportingText = error?.let { { Text(it) } },
         keyboardOptions = KeyboardOptions(keyboardType= keyboardType),
         singleLine = true,
-        modifier = Modifier.fillMaxWidth()
+        modifier = modifier.fillMaxWidth()
     )
 }
