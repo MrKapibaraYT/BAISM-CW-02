@@ -56,9 +56,9 @@ class PersonViewModelTest {
         val ok = viewModel.addPerson(validForm)
         assertFalse(ok.hasErrors)
         assertEquals(1, viewModel.people.value.size)
-        assertEquals("Janek", viewModel.people.value.first().firstName)
+        assertEquals("Jan", viewModel.people.value.first().firstName)
 
-        val bad = viewModel.addPerson(validForm.copy(email = "nieasd"))
+        val bad = viewModel.addPerson(validForm.copy(email = "zly"))
         assertTrue(bad.hasErrors)
         assertEquals(1, viewModel.people.value.size)
     }
@@ -71,7 +71,7 @@ class PersonViewModelTest {
 
         viewModel.deletePerson(idToDelete)
 
-        assertEquals(listOf("Anne"), viewModel.people.value.map { it.firstName })
+        assertEquals(listOf("Anna"), viewModel.people.value.map { it.firstName })
     }
 
 }

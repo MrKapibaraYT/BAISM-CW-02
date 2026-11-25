@@ -51,8 +51,8 @@ class HomeScreenTest {
         composeRule.setContent { HomeScreen(onNavigate = { routes += it }) }
 
         composeRule.onNodeWithText("Dodaj osobę").assertIsDisplayed().performClick()
-        composeRule.onNodeWithText("Wyświetl liste dostępnych osob").assertIsDisplayed().performClick()
-        composeRule.onNodeWithText("Usuń osoba").assertIsDisplayed().performClick()
+        composeRule.onNodeWithText("Wyświetl listę dostępnych osób").assertIsDisplayed().performClick()
+        composeRule.onNodeWithText("Usuń osobę").assertIsDisplayed().performClick()
 
         assertEquals(listOf(Routes.ADD, Routes.LIST, Routes.DELETE), routes)
     }
