@@ -27,6 +27,7 @@ import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.runtime.setValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.unit.dp
 import com.example.baism_cw_02.data.Person
 import com.example.baism_cw_02.utils.EmptyState
@@ -75,12 +76,12 @@ fun AddPersonScreen(
             .padding(16.dp),
         verticalArrangement = Arrangement.spacedBy(6.dp)
     ) {
-        FormField("Imię", firstName, { firstName = it }, errors.firstName)
-        FormField("Nazwisko", lastName, { lastName = it }, errors.lastName)
-        FormField("Nr telefonu (np. +48 123 423 212)", phone, {phone = it }, errors.phone)
-        FormField("Adres e-mail", email, { email = it }, errors.email)
-        FormField("Data urodzenia (dd.mm.yyyy)", birthDate, { birthDate = it }, errors.birthDate)
-        FormField("Adres", address, { address = it }, errors.address)
+        FormField("Imię", firstName, { firstName = it }, errors.firstName, modifier = Modifier.testTag("firstName"))
+        FormField("Nazwisko", lastName, { lastName = it }, errors.lastName, modifier = Modifier.testTag("lastName"))
+        FormField("Nr telefonu (np. +48 123 423 212)", phone, {phone = it }, errors.phone, modifier = Modifier.testTag("phone"))
+        FormField("Adres e-mail", email, { email = it }, errors.email, modifier = Modifier.testTag("email"))
+        FormField("Data urodzenia (dd.mm.yyyy)", birthDate, { birthDate = it }, errors.birthDate, modifier = Modifier.testTag("birthDate"))
+        FormField("Adres", address, { address = it }, errors.address, modifier = Modifier.testTag("address"))
 
         Button(
             onClick = {
